@@ -1,0 +1,44 @@
+<div class="container-fluid">
+  <div class="row">
+<div class="col-md-2">
+<button type="button" class="btn btn-warning" (click)="getAllUsers()">Coge todos los usuarios</button>
+</div>
+<div class="col-md-2">
+<button type="button" class="btn btn-success" (click)="addUser()">Añade un usuario</button>
+</div>
+
+<div class="col-md-2">
+<button type="button" class="btn btn-warning" (click)="deleteUser()">Elimina un usuario</button>
+</div>
+<!--<div class="col-md-3">
+<button type="button" class="btn btn-warning" (click)= "getUserId(this.id)"></button>
+</div>-->
+  </div>
+  <br><hr>
+
+ <div class="div-table">
+             <div class="div-table-row">
+                <div class="div-table-col">Id</div>
+                <div class="div-table-col">UserName</div>
+                <div class="div-table-col">Name</div>
+                <div class="div-table-col">Email</div>
+                <div class="div-table-col">Detail</div>
+                <div class="div-table-col">Update</div>
+                <div class="div-table-col">Delete</div>
+             </div>
+            <div *ngFor="let user of getUsers" class="div-table-row">
+                <div class="div-table-col">{{user.id}}</div>
+                <div class="div-table-col">{{user.username}}</div>
+                <div class="div-table-col">{{user.name}}</div>
+                 <div class="div-table-col">{{user.email}}</div>
+                <div class="div-table-col"><a (click)="getSingleUser(user.id)">Detail</a></div>
+                 <!--<div class="div-table-col"><a (click)="">Update</a></div>
+                  <div class="div-table-col"><a (click)="">Delete</a></div>-->
+            </div>
+      </div>
+
+</div>
+
+
+
+
