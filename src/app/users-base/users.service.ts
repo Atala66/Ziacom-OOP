@@ -62,8 +62,9 @@ deleteUser(id:number){
 }
 
 // actualiza un usuario existente
-updateUser(){
-    
+updateUser(user){
+    return this.http.put(this.getUserId(user.id),JSON.stringify(user))
+    .map(res => res.json());    
 }
 
 // recoje cualquier id

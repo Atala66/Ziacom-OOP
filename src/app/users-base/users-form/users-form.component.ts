@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 // FormGroup representa un set de controles de formulario
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 // importamos módulos de ruta
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute, Params } from '@angular/router';
 // importamos modelo de datos de users-base
 import { UserOtherModel} from '../../users-base/users-base.model';
 // importamos servicio
@@ -24,6 +24,7 @@ export class UsersFormComponent implements OnInit {
       form: FormGroup;
       // instanciamos un nuevo usuario basado en el modelo de UserOtherModel
       user: UserOtherModel = new UserOtherModel();
+      public paramUrl;
   
   constructor(
     //instanciamos variables de servicio y rutas
@@ -47,9 +48,10 @@ export class UsersFormComponent implements OnInit {
    }
 
  ngOnInit() {
-   // prueba
-   console.log(this._userForm.getPrueba());
-   
+    this._activeRouter.params.forEach((params: Params) => {
+      this.paramUrl = params['id'];
+      console.log(params);
+    });
   } 
     saveUser() {
       //variable para recoger el resultado
@@ -68,5 +70,6 @@ export class UsersFormComponent implements OnInit {
     //  return result;
   }
     }
+
 
 }

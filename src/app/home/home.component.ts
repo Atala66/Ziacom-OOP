@@ -20,12 +20,6 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
 
-    this._activateRouter.params.forEach((params: Params) => {
-      this.paramUrl = params['id'];
-      console.log(params);
-
-    });
-
   }
 
   // métodos de la clase

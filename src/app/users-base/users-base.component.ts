@@ -79,9 +79,14 @@ export class UsersBaseComponent implements OnInit {
       data => { this.user = data },
       error => console.log(error),
       () => console.log('Llamada terminada'));
-    // this. _router.navigate(['/users', 'id']);
   }
+  
+  // actualizar usuario
+  updateUser(user){
+    var updateUser = this.getSingleUser(user.id);
+    console.log(updateUser);
 
+  }
   // eliminar un usuario
   deleteUser(user) {
     var deleteConfirm = confirm('Are you sure you wan´t to delete user with name ' + user.name + 
