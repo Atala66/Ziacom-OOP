@@ -18,16 +18,15 @@ import { UserFormService} from './users-form.service';
   
 })
 export class UsersFormComponent implements OnInit {
+      title:string;
      // instanciamos un grupo de formulario
      // en esta variable recogeremos los datos del formulario
       form: FormGroup;
-      title:string;
       // instanciamos un nuevo usuario basado en el modelo de UserOtherModel
       user: UserOtherModel = new UserOtherModel();
-     public newForm:string;
- 
+  
   constructor(
-      //instanciamos un constructor de formulario ¿por qué sobre la funcion constructor y no sobre la clase????
+    //instanciamos variables de servicio y rutas
        private formBuilder: FormBuilder,
        private _router: Router,
        private _activeRouter: ActivatedRoute,
@@ -43,6 +42,7 @@ export class UsersFormComponent implements OnInit {
         email: ['', Validators.required],
         password: ['', Validators.required]
           }); 
+
      this.title = 'New User';
    }
 

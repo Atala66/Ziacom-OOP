@@ -15,7 +15,6 @@
 </div>-->
   </div>
   <br><hr>
-
  <div class="div-table">
              <div class="div-table-row">
                 <div class="div-table-col">Id</div>
@@ -23,7 +22,7 @@
                 <div class="div-table-col">Name</div>
                 <div class="div-table-col">Email</div>
                 <div class="div-table-col">Detail</div>
-                <div class="div-table-col">Update</div>
+             <!--   <div class="div-table-col">Update</div>-->
                 <div class="div-table-col">Delete</div>
              </div>
             <div *ngFor="let user of getUsers" class="div-table-row">
@@ -33,7 +32,7 @@
                  <div class="div-table-col">{{user.email}}</div>
                 <div class="div-table-col"><a (click)="getSingleUser(user.id)" class="link-detail">Detail</a></div>
                  <!--<div class="div-table-col"><a (click)="">Update</a></div>-->
-                  <div class="div-table-col"><a (click)="deleteUser()">Delete</a></div>
+                  <div class="div-table-col"><a (click)="deleteUser(user)" class="link-detail">Delete</a></div>
             </div>
       </div>
 

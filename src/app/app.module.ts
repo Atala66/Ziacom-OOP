@@ -8,6 +8,8 @@ import { AppComponent } from './app.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 // importamos el módulo de rutas
 import {routing , appRoutingProviders } from './app.routing';
+// importamos el módulo interno de enrutado de usuarios
+import {usersRouting } from './users-base/users.routing'
 // componentes propios
 import { UsersBaseComponent } from './users-base/users-base.component';
 import { HomeComponent } from './home/home.component';
@@ -31,12 +33,13 @@ import { UsersFormComponent } from './users-base/users-form/users-form.component
     FormsModule,
     HttpModule,
     NgbModule.forRoot(),
-    routing,
+    usersRouting, //nested routing user´s CRUD
+    routing, // main routing
     BrowserModule,
     ReactiveFormsModule /* xa que funcionen los formularios 
-                          OJO!! si le pasamos solo FormsModule peta*/
-                         
+                          OJO!! si le pasamos solo FormsModule peta*/                        
   ],
+
   providers: [appRoutingProviders],
   bootstrap: [AppComponent]
 })

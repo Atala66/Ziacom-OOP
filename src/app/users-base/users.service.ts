@@ -39,6 +39,7 @@ getAllUsers(){
 }
 // dame un usuario por la id
 getUserById(id:number){
+    console.log(id);
     // devuelve esta url + llamada a funcion para capturar la id
     return this.http.get(this.getUserId(id))
     .map(res => res.json());
@@ -52,22 +53,19 @@ addUser(user){
     .map(res => res.json());
 }
 
+// elimina un usuario
+deleteUser(id:number){
+    // elimina al usuario con esta id
+     console.log(id);
+    return this.http.delete(this.getUserId(id))
+       .map(res => res.json());   
+}
+
 // actualiza un usuario existente
 updateUser(){
     
 }
 
-// elimina un usuario
-deleteUser(id){
-    return this.http.delete(this.getUserId(id))
-       .map(res => res.json())
-    .subscribe(
-        data => {this.user = data},
-        error => console.log(error), 
-        () => console.log('llamada finalizada. Usuario eliminado')
-    );
-    
-}
 // recoje cualquier id
 // es un método privado. no se expone hacia fuera. solo va a ser utilizado 
 // por los servicios 

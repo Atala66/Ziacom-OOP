@@ -16,7 +16,7 @@ const appRoutes:Routes =[
     // get single user
     // {path:'users/:id', component:UsersBaseComponent},
      // post new user
-   {path:'users/newUser', component:UsersFormComponent},
+     {path:'users/newUser', component:UsersFormComponent},
       //users
     {path:'users', component:UsersBaseComponent},
     // error 404
