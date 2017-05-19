@@ -1,0 +1,27 @@
+<div class="container">
+<h2 class="text-center">{{title}}</h2>
+
+<div class="row">
+<form  [formGroup]="form" (ngSubmit)="saveUser()">
+ <div class="form-group">
+        <label for="login">Login:</label>
+        <input type="text" class="form-control" formControlName="login" id="login" [(ngModel)]="user.login" required>
+      </div>
+      <div class="form-group">
+        <label for="nombre">Nombre:</label>
+        <input type="text" class="form-control" formControlName="nombre" id="nombre" [(ngModel)]="user.nombre" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="text" class="form-control" formControlName="email" id="email" [(ngModel)]="user.email">
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="text" class="form-control" formControlName="password"id="password" [(ngModel)]="user.password">
+      </div>
+      <button type="submit" class="btn btn-success">Submit</button>
+
+</form>
+</div>
+
+</div>

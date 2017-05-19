@@ -1,0 +1,67 @@
+
+- para que sirve exactamente el decorador Injectable sobre un servicio???
+    -para poder inyectar el servicio sobre un componente
+
+
+- una vez inyectado el servicio:
+  -tenemos que crear una variable en el componente
+   o lugar a utilizar el servicio por cada objeto 
+   o coleccion de objetos que queramos recoger.
+
+
+ OBSERVABLES: Patr�n avanzado de promises.
+ The Observable classes in Angular 2 are provided by the ReactiveX library.
+  
+.map() .suscribe()   ----------- son Observables
+
+
+
+  2 FORMAS DE CODIFICAR LAS LLAMADAS A SERVICIOS HTTP EN ANGULAR 2.
+
+   1- Devolvemos todoS LOS DATOS en el servicio
+   2 -Declaramos las variables para recoger datos en el servicio.
+------------------------------------------------------------------------------------
+       EJ: getAllUsers(){
+
+   return this.http.get(this.url)
+    //despues mapea la respuesta y transformala en json
+    .map(res => res.json())
+    .subscribe(
+        data =>{this.users = data},
+        err => console.log(err),
+        () => console.log('done')
+     );
+
+}
+    2- En el componente nos limtamos a hacer la llamada al servicio
+        getAllUsers(){
+         this._usersService.getAllUsers();
+}     
+-------------------------------------------------------------------------------------
+
+   1- Devolvemos EL MAPEO LOS DATOS en el servicio
+                getAllUsers(){
+		 return this.http.get(this.url)
+    //despues mapea la respuesta y transformala en json
+    .map(res => res.json())
+                    }
+
+
+   2 -Declaramos las variables para recoger datos en EL COMPONENTE + 1 instancia del obj servicio
+   3- Sobre la llamada al servicio, terminamos de utilizar los m�todos y manipular los datos.
+
+        getAllUsers(){   
+            this._userService.getAllUsers()
+    		.subscribe(
+     		   data =>{this.users = data},
+      		  err => console.log(err),
+       		 () => console.log('done')
+    			 );
+   // console.log('Soy el servicio get all Users');
+
+--------------------------------------------------------------------------------------------
+
+// CUIDADO: Si inicializamos las propiedades en el constructor, cada vez que instanciemos un nuevo objeto, tenemos que pasarle las propiedades
+// o petará. Los getters y setters no valdrían porque ya se ha hecho sobre el constructor.
+
+   

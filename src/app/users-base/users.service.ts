@@ -16,7 +16,7 @@ export class UsersService{
   //1- declaramos las urls a las que va a tirar el servicio.
 private url = "http://jsonplaceholder.typicode.com/users";
 // declaramos variables para recoger los datos que devuelve el servicio
- private users;
+ //private users;
  private user;
 constructor(  
     // instanciamos una variable del objeto Http
@@ -44,9 +44,14 @@ getUserById(id:number){
     .map(res => res.json());
 }
 // añade un usuario
-addUser(){
-
+addUser(user){
+    // devuelve el post con los params(esta url y el objeto JSON stringificado para el servicio)
+    console.log(this.user);
+    // cuidado! en JSON.stringify(user) --NO this.user
+    return this.http.post(this.url, JSON.stringify(user))
+    .map(res => res.json());
 }
+
 // actualiza un usuario existente
 updateUser(){
     
@@ -59,12 +64,13 @@ deleteUser(id){
     .subscribe(
         data => {this.user = data},
         error => console.log(error), 
-        () => console.log('done')
+        () => console.log('llamada finalizada. Usuario eliminado')
     );
+    
 }
 // recoje cualquier id
 // es un método privado. no se expone hacia fuera. solo va a ser utilizado 
-// por getUserById que si expondrá el servicio
+// por los servicios 
 private getUserId(id:number){
     return this.url + '/' + id;
 }

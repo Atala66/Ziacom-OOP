@@ -4,7 +4,7 @@
 <button type="button" class="btn btn-warning" (click)="getAllUsers()">Coge todos los usuarios</button>
 </div>
 <div class="col-md-2">
-<button type="button" class="btn btn-success" (click)="addUser()">Añade un usuario</button>
+<button type="button" class="btn btn-success" (click)="navigateToForm()">Añade un usuario</button>
 </div>
 
 <div class="col-md-2">
@@ -31,9 +31,9 @@
                 <div class="div-table-col">{{user.username}}</div>
                 <div class="div-table-col">{{user.name}}</div>
                  <div class="div-table-col">{{user.email}}</div>
-                <div class="div-table-col"><a (click)="getSingleUser(user.id)">Detail</a></div>
-                 <!--<div class="div-table-col"><a (click)="">Update</a></div>
-                  <div class="div-table-col"><a (click)="">Delete</a></div>-->
+                <div class="div-table-col"><a (click)="getSingleUser(user.id)" class="link-detail">Detail</a></div>
+                 <!--<div class="div-table-col"><a (click)="">Update</a></div>-->
+                  <div class="div-table-col"><a (click)="deleteUser()">Delete</a></div>
             </div>
       </div>
 
