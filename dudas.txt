@@ -1,4 +1,4 @@
-
+﻿
 - para que sirve exactamente el decorador Injectable sobre un servicio???
     -para poder inyectar el servicio sobre un componente
 
@@ -64,4 +64,23 @@
 // CUIDADO: Si inicializamos las propiedades en el constructor, cada vez que instanciemos un nuevo objeto, tenemos que pasarle las propiedades
 // o petará. Los getters y setters no valdrían porque ya se ha hecho sobre el constructor.
 
-   
+
+------------------------------------------------------------------------------------------------------------
+
+FORMULARIOS: (2 TIPOS)-
+
+a) TEMPLATE-DRIVEN-FORMS: Más parecidos a angular 1, mantienen la validación y la lógica en gran medida sobre el HTML.
+b) MODEL-DRIVEN-FORMS: Aislan la validación y la lógica sobre el componente.
+    ¡¡¡¡ CUIDADO CON MEZCLAR SINTAXIS O PETARÁ POR TODAS PARTES !!!!
+-----------------------------------------------------------------------------------------------------------------
+
+PARENT AND CHILD COMPONENT:
+
+Exportar ambos componentes sobre el app.module.
+Inyectarlos en el array de declarations.
+Insertamos la tag en el HTML del componente padre.
+
+-----------------------------------------------------------------------------------------------------
+
+@INPUT: Share information between different directives and components.
+ https://angular.io/docs/ts/latest/cookbook/component-communication.html
