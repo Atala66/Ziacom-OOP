@@ -17,6 +17,11 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { FooterComponent } from './footer/footer.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { UsersFormComponent } from './users-base/users-form/users-form.component';
+import { SideMenuComponent } from './side-menu/side-menu.component';
+import { UsersDetailComponent } from './users-base/users-detail/users-detail.component';
+import { ParentComponentComponent } from './home/parent-component/parent-component.component';
+import { ChildComponentComponent } from './home/child-component/child-component.component';
+import { ImageGalleryComponent } from './image-gallery/image-gallery.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +31,12 @@ import { UsersFormComponent } from './users-base/users-form/users-form.component
     NavBarComponent,
     FooterComponent,
     NotFoundComponent,
-    UsersFormComponent
+    UsersFormComponent,
+    SideMenuComponent,
+    UsersDetailComponent,
+    ParentComponentComponent,
+    ChildComponentComponent,
+    ImageGalleryComponent
   ],
   imports: [
     BrowserModule,

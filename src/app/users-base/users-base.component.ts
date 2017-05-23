@@ -63,8 +63,7 @@ export class UsersBaseComponent implements OnInit {
       this.paramUrl = params['id'];
       console.log(params);
     });
-    // console.log(this.firstUser);
-    /*console.log(this.other_user); */
+
 
     this._userService.getAllUsers().subscribe(
       data => { this.getUsers = data },
@@ -83,8 +82,15 @@ export class UsersBaseComponent implements OnInit {
   
   // actualizar usuario
   updateUser(user){
-    var updateUser = this.getSingleUser(user.id);
-    console.log(updateUser);
+    var getUser = this._userService.getUserById(user.id);
+     console.log(getUser);
+     if(user.id){
+       var updateUser = this._userService.updateUser(user).subscribe(
+         data => {this.user = data},
+         error => console.log('Error actualizando el usuario ' + error)
+       );
+       console.log(updateUser);
+     }
 
   }
   // eliminar un usuario

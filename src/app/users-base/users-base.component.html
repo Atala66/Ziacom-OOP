@@ -1,8 +1,8 @@
 <div class="container-fluid">
   <div class="row">
-<div class="col-md-2">
+<!--<div class="col-md-2">
 <button type="button" class="btn btn-warning" (click)="getAllUsers()">Coge todos los usuarios</button>
-</div>
+</div>-->
 <div class="col-md-2">
 <button type="button" class="btn btn-success" (click)="navigateToForm()">Añade un usuario</button>
 </div>
@@ -12,6 +12,7 @@
 </div>-->
   </div>
   <br><hr>
+  
  <div class="div-table">
              <div class="div-table-row">
                 <div class="div-table-col">Id</div>
@@ -23,6 +24,7 @@
                 <div class="div-table-col">Delete</div>
              </div>
             <div *ngFor="let user of getUsers" class="div-table-row">
+               <div *ngIf="user"><!--comprobación-->
                 <div class="div-table-col">{{user.id}}</div>
                 <div class="div-table-col">{{user.username}}</div>
                 <div class="div-table-col">{{user.name}}</div>
@@ -32,6 +34,7 @@
                   <div class="div-table-col"><a (click)="deleteUser(user)" class="link-detail">Delete</a></div>
             </div>
       </div>
+</div>
 </div>
 
 

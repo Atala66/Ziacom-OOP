@@ -3,24 +3,47 @@
 import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 // importamos los componentes a enrutar
-import {UsersBaseComponent} from './users-base/users-base.component';
-import {UsersFormComponent} from './users-base/users-form/users-form.component';
-import {HomeComponent} from './home/home.component';
-import {NotFoundComponent} from './not-found/not-found.component';
+import { UsersBaseComponent } from './users-base/users-base.component';
+import { UsersFormComponent } from './users-base/users-form/users-form.component';
+import { HomeComponent } from './home/home.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { SideMenuComponent } from './side-menu/side-menu.component';
+import { ParentComponentComponent } from './home/parent-component/parent-component.component';
+import { ImageGalleryComponent } from './image-gallery/image-gallery.component';
 
 
 // asignamos el objeto routes a una constante
-const appRoutes:Routes =[
+const appRoutes: Routes = [
     //home
-    { path: '', component:HomeComponent},
+    { path: '', component: HomeComponent },
+    { path: 'parent', component: ParentComponentComponent },
+    { path: 'images', component: ImageGalleryComponent },
     // get single user
     // {path:'users/:id', component:UsersBaseComponent},
-     // post new user
-     {path:'users/newUser', component:UsersFormComponent},
-      //users
-    {path:'users', component:UsersBaseComponent},
+    // post new user
+    // {path:'users/newUser', component:UsersFormComponent},
+    //users
+    {
+        path: 'users',
+        component: UsersBaseComponent,
+        children: [
+            {
+                path: '',
+                component: UsersBaseComponent
+            },
+            {
+                path: '',
+                outlet: 'sidemenu', // ojo a esto es el name del router auxiliar!!!
+                component: SideMenuComponent
+            },
+            {
+                path: ':id/detail',
+                component: UsersBaseComponent
+            }
+        ]
+    },
     // error 404
-    {path: '**', component:NotFoundComponent}
+    { path: '**', component: NotFoundComponent },
 
 ]
 // repasar esto

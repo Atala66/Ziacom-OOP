@@ -1,0 +1,19 @@
+.child{
+    background-color: #aaa;
+    padding:10px;
+    overflow:auto;
+}
+
+.title-component{
+color:#ff0000;
+ font-weight: bold;
+font-style: italic;
+}
+
+.book{
+    background :rgb(122,55,95);
+    padding:20px;
+    margin:10px;
+    width:300px;
+    float:left; 
+}
