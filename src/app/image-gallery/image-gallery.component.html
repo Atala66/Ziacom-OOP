@@ -1,3 +1,32 @@
-<p>
-  image-gallery works!
-</p>
+<!--2 elementos en esta template-->
+
+<div class="container">
+  <h2 class="text-center image-gallery-title">{{title }}</h2>
+  <!--1 Ventana modal asociada a la imagen seleccionada -->
+  <div class="modal fade" id="selectedImageModal">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <!--<img *ngIf="selectedImage" src="{{selectedImage.url}}">-->
+          <div class="selectedImage" *ngIf="selectedImage">
+            <img src="{{ selectedImage.url }}">
+            <div class="caption">
+              <p><strong>{{ selectedImage.title  }}</strong></p>
+              <p>{{ selectedImage.caption }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--2  Lista thumbnail con todas las imágenes -->
+  <ul id="thumbnailList" class="images-list">
+    <li *ngFor="let image of images">
+      <img src="{{image.url}}" class="tn" width="191" height="146" data-toggle="modal" data-target="#selectedImageModal" (click)="setSelectedImage(image)">
+    </li>
+  </ul>
+
+
+</div>
+<!--fin container-->
