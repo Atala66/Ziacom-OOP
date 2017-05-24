@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Input, Output,EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'child-component',
@@ -6,8 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./child-component.component.css']
 })
 export class ChildComponentComponent implements OnInit {
- // public name: string = 'Child Component';
-    public titleComponent = 'Child Component';
+    public titleComponent = 'I am the Child Component and I am nested';
+
+    // la prop dataToFather va del hijo padre y se tiene que disparar con un evento
+    @Output() dataToFather:EventEmitter<string> = new EventEmitter<string>();
+
+// la propiedad title en el hijo es igual a lo que venga por el padre
+     @Input () title:string;
+
+
   // ARRAY DE DATOS A PELO: Normalmente vendran de un servidor y los consumiremos con un servicio
   books = [
     {
@@ -29,5 +37,11 @@ export class ChildComponentComponent implements OnInit {
 
   ngOnInit() {
   }
+
+    onClick(){
+      this.dataToFather.emit(' ....y yo soy los datos pasados de vuelta al padre ')
+    }
+
+
 
 }

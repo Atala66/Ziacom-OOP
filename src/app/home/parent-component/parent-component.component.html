@@ -1,6 +1,7 @@
 <div class="parent">
   <span class="float-right title-component">{{titleComponent}}</span>   
 <h1> Author:  {{author}}</h1>
-<!--Insertamos la tag en el HTML del componente padre-->
- <child-component></child-component>
+
+                   <!--@Input-->         <!--@Output-->
+ <child-component [title]="titleToChild" (dataToFather)='onNotify($event)'></child-component>
 </div>

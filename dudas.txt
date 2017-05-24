@@ -83,4 +83,22 @@ Insertamos la tag en el HTML del componente padre.
 -----------------------------------------------------------------------------------------------------
 
 @INPUT: Share information between different directives and components.
+ Pasa informacion del componente padre al componente hijo.
+  -Se declara sobre el componente hijo
+
+ @OUTPUT: Pasa informacion del componente hijo al componente padre.
+
+ SOBRE EL HIJO:
+- El output se declara sobre el componente hijo.
+- Definimos la funcion para emitir los datos
+    onClick(){
+      this.dataToFather.emit(' ....y yo soy los datos pasados de vuelta al padre ')
+    }
+- La llamamos con un evento sobre el html del hijo.
+
+SOBRE EL PADRE.
+-Añadir la notificacion sobre el tag html (dataToFather)='onNotify($event)'
+- Desarrollar la función sobre la clase.
+
  https://angular.io/docs/ts/latest/cookbook/component-communication.html
+

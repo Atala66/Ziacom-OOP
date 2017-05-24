@@ -19,7 +19,7 @@ display:inline;
 
 .tn{ 
 margin:2px 0px;
-box-shadow:#999 1px 1px 3px 1px; 
+/*box-shadow:#999 1px 1px 3px 1px; */
 cursor: pointer 
   }
 
@@ -34,11 +34,11 @@ cursor: pointer
     }
 
 .caption{
-	position:absolute;
+/*	position:absolute; 
+	bottom:100;
+	left:0;*/
     height:70px;
 	width:100%;
-	top:410;
-	left:0;
 	opacity:0.9;
 	background-color:black;
 	color:white;
@@ -50,4 +50,9 @@ cursor: pointer
 p {
    -webkit-margin-before: 5px !important;
    -webkit-margin-after: 5px !important;
+}
+
+
+.btn-close-modal{
+	color:#000;
 }
