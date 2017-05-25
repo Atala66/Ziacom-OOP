@@ -1,14 +1,12 @@
 <div class="container">
 
     <div class="child">
-        <span class="float-left title-component">{{titleComponent}}</span>
+        <span class="float-left title-component">{{ titleComponent }}</span>
         <br>
         <hr>
-        <!--propiedad pasada a traves del @input del padre-->
-        <span class="float-right title-component">{{title}}</span>
         <hr>
         <h2>Books: </h2>
-        <h3>{{ titleToChild }}</h3>
+        <!--<h3>{{ titleToChild }}</h3>-->
         <ul class="books" *ngFor="let book of books">
             <li>{{ book.title }}</li>
             <li>{{ book.price }}</li>
@@ -16,6 +14,8 @@
 
 <br><hr>
         <span class="output-data" (click)="onClick()">Click me!!</span>
+          <!--propiedad pasada a traves del @input del padre-->
+        <span class="text-center title">{{titleToChild}}</span>
     </div>
 
 </div>

@@ -17,8 +17,9 @@ export class ImageGalleryComponent implements OnInit {
     public showModal:boolean;
     public getPrueba;
     public images;
-   // vamos a pasar el array de imagenes al componente hijo 
+   // vamos a pasar el array de imagenes al componente hijo (home)
  @Input()  public datasource:Array<any>;
+ @Input() public whatever:string;
     // la var data source es la que lleva todo el array de datos y la que vamos  a iterar
     // lleva el decorador @Input lo que nos permitirá:
     // pasarla como atributo en el componente
@@ -27,25 +28,26 @@ export class ImageGalleryComponent implements OnInit {
  constructor(
    // instanciamos una variable de servicio
    private _imagesService:ImagesService
+
  ){
+   // le vamos a pasar este aray de imagenes a home (c.hijo)
+    /*this.datasource = [
+      {'url': 'assets/img/frog.jpg',
+     'title': 'Aliquam erat volutpat',
+            'caption': 'imperdiet imperdiet. Nullam ut ligula vitae arcu vulputate dictum ut quis elit.'},
+      {'url': 'assets/img/architecture.jpg'},
+      {'url': 'assets/img/flowers.jpg'},
+      {'url': 'assets/img/forest.jpg'},
+      {'url': 'assets/img/people.jpg'},
+      {'url': 'assets/img/people.jpg'},
+      {'url': 'assets/img/people.jpg'},
+      {'url': 'assets/img/people.jpg'},
+      {'url': 'assets/img/people.jpg'},
+      {'url': 'assets/img/people.jpg'},
+      {'url': 'assets/img/people.jpg'},
+      {'url': 'assets/img/people.jpg'}
 
-// le vamos a pasar este aray de imagenes a home (c.hijo)
-    this.datasource = [
-      {"url": "assets/img/frog.jpg"},
-      {"url": "assets/img/architecture.jpg"},
-      {"url": "assets/img/flowers.jpg"},
-      {"url": "assets/img/forest.jpg"},
-      {"url": "assets/img/people.jpg"},
-      {"url": "assets/img/people.jpg"},
-      {"url": "assets/img/people.jpg"},
-      {"url": "assets/img/people.jpg"},
-      {"url": "assets/img/people.jpg"},
-      {"url": "assets/img/people.jpg"},
-      {"url": "assets/img/people.jpg"},
-      {"url": "assets/img/people.jpg"}
-
-    ]   
-
+    ] */  
  }
 
   ngOnInit() {
@@ -56,7 +58,9 @@ export class ImageGalleryComponent implements OnInit {
       data => {this.images = data},
       error => console.log(error),
       () => console.log('Imágenes traidas del servicio')); 
-    // this.images = this.datasource;
+    //this.images = this.datasource;
+
+       console.log(this.whatever);
   }
   
 

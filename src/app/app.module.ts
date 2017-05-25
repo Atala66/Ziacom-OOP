@@ -9,7 +9,12 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 // importamos el módulo de rutas
 import {routing , appRoutingProviders } from './app.routing';
 // importamos el módulo interno de enrutado de usuarios
-import {usersRouting } from './users-base/users.routing'
+import {usersRouting } from './users-base/users.routing';
+import {Component, NgZone} from '@angular/core';
+
+
+
+
 // componentes propios
 import { UsersBaseComponent } from './users-base/users-base.component';
 import { HomeComponent } from './home/home.component';

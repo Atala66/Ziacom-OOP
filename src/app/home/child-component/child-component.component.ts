@@ -13,7 +13,7 @@ export class ChildComponentComponent implements OnInit {
     @Output() dataToFather:EventEmitter<string> = new EventEmitter<string>();
 
 // la propiedad title en el hijo es igual a lo que venga por el padre
-     @Input () title:string;
+     @Input () titleToChild:string;
 
 
   // ARRAY DE DATOS A PELO: Normalmente vendran de un servidor y los consumiremos con un servicio

@@ -4,9 +4,17 @@
     overflow:auto;
 }
 
-.title-component{
-color:#ff0000;
+.title{
+color:#00f;
  font-weight: bold;
+font-style: italic;
+font-size:22px;
+margin-left: 50%;
+}
+
+.title-component{
+    color:red;
+    font-weight: bold;
 font-style: italic;
 }
 
