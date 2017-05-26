@@ -1,0 +1,18 @@
+<div class="container">
+<span class="title-component">{{ Iam }}</span>
+<hr>
+<!--ngFileSelect = directiva-->
+  <!--apunta a options--> <!--evento = funcion-->                 
+<input type="file" ngFileSelect 
+    [options]= "options"    
+    (onUpload)= "handleUploadFile($event)"
+    (beforeUpload)= "beforeUpload($event)">
+
+
+
+ <div>
+Response: {{ uploadFile | json }}
+</div>
+<hr>
+
+</div>

@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 // importamos el módulo Input
 import { Input } from '@angular/core';
 import { Output, EventEmitter } from '@angular/core';
-import {ImagesService} from './shared-services/image-gallery.service'
+import {ImagesService} from './shared-services/image-gallery.service';
+// importamos el módulo de subida de imagenes
+import { UploadFilesComponent } from '.././upload-files/upload-files.component';
 
 @Component({
   moduleId: module.id,
