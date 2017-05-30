@@ -13,6 +13,7 @@ import {routing , appRoutingProviders } from './app.routing';
 import {usersRouting } from './users-base/users.routing';
 // módulo para subida de imágenes
 import { Ng2UploaderModule } from 'ng2-uploader';
+//import { FileUploaderModule } from '@uniprank/ng2-file-uploader';
 
 
 // componentes propios
@@ -49,6 +50,7 @@ import { UploadFilesComponent } from './upload-files/upload-files.component';
     BrowserModule,
     FormsModule,
     HttpModule,
+   // FileUploaderModule,
     NgbModule.forRoot(),
     usersRouting, //nested routing user´s CRUD
     routing, // main routing

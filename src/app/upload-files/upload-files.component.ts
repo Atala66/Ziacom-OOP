@@ -1,6 +1,6 @@
-import { Component, OnInit, NgZone } from '@angular/core';
+import { Component, OnInit, NgZone, ChangeDetectorRef } from '@angular/core';
+import { FileUploader } from '@uniprank/ng2-file-uploader';
 
-import { UPLOAD_DIRECTIVES } from 'ng2-uploader';
 
 @Component({
   selector: 'upload-files',
@@ -8,46 +8,56 @@ import { UPLOAD_DIRECTIVES } from 'ng2-uploader';
   styleUrls: ['./upload-files.component.css']
 })
 export class UploadFilesComponent implements OnInit {
-  public Iam: string = ' I am the Upload Files Component!!!';
-  // declaramos las props del cmpt subida de imágenes
-  public uploadFile: any;
-  // prop para recoger imagenes
-  public arrayFiles:Array<any>;
-  // repasar esta propiedad tiene zona donde hacer drop????
-  hasBaseDropZoneOver: boolean = false;
+   public url;
+  /* readUrl(event) {
+  if (event.target.files && event.target.files[0]) {
+    var reader = new FileReader();
+    reader.onload = (event:any) => {
+      this.url = event.target.result;
+      console.log(this.url);
+    }
+    reader.readAsDataURL(event.target.files[0]);
+  }
+} */
 
+  uploadFile: any;
+  hasBaseDropZoneOver: boolean = false;
   options: Object = {
-    url: 'http://ngx-uploader.com/upload' // URL apunta al servidor donde se va a guardar la imágen
-   
+    url: 'http://localhost:10050/upload'
   };
-  sizeLimit: 2000000
+  sizeLimit = 2000000;
+ 
+  handleUpload(data): void {
+    if (data && data.response) {
+      data = JSON.parse(data.response);
+      this.uploadFile = data;
+    }
+  }
+ 
+  fileOverBase(e:any):void {
+    this.hasBaseDropZoneOver = e;
+  }
+ 
+  beforeUpload(uploadingFile): void {
+    if (uploadingFile.size > this.sizeLimit) {
+      uploadingFile.setAbort();
+      alert('File is too large');
+    }
+  }
+
+   readUrl(event) {
+  if (event.target.files && event.target.files[0]) {
+    var reader = new FileReader();
+    reader.onload = (event:any) => {
+      this.url = event.target.result;
+      console.log(this.url);
+    }
+    reader.readAsDataURL(event.target.files[0]);
+  }
+}
+
 
   ngOnInit() { }
-
-  // método de subida de imágenes
-// ONE FILE AT TIME
-  handleUploadFile(file): void {
-    console.log(file);
-    // si existe el archivo y hay response, iguala el parseo de la respuesta al archivo
-    if (file && file.response) {
-      file = JSON.parse(file.response);
-      // asignamos file a la prop. declarada anteriormente
-      this.uploadFile = file;
-     // console.log('Archivo enviado correctamente al servidor');
-    }
-  }
-
-  // método comprobación pre-subida
-  beforeUpload(fileUploading): void {
-    if (fileUploading.size > this.sizeLimit) {
-      fileUploading.setAbort();
-      alert(' File size is too large');
-    }
-
-  }
-
-
-
 
 
 }

@@ -18,7 +18,7 @@ export class ImageGalleryComponent implements OnInit {
     public selectedImage:boolean;
     public showModal:boolean;
     public getPrueba;
-    public images;
+    public images:Array<any>;
    // vamos a pasar el array de imagenes al componente hijo (home)
  @Input()  public datasource:Array<any>;
  @Input() public whatever:string;
@@ -77,6 +77,11 @@ export class ImageGalleryComponent implements OnInit {
     this.selectedImage = false;
    var closeModal = this.showModal = false;
   
+  }
+
+  //empujar nueva imagen al array de imagenes
+  pushNewImage(image){
+
   }
 
 }
