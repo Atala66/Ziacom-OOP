@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {Component, NgZone} from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
@@ -10,9 +11,9 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {routing , appRoutingProviders } from './app.routing';
 // importamos el módulo interno de enrutado de usuarios
 import {usersRouting } from './users-base/users.routing';
-import {Component, NgZone} from '@angular/core';
-
-
+// módulo para subida de imágenes
+import { Ng2UploaderModule } from 'ng2-uploader';
+//import { FileUploaderModule } from '@uniprank/ng2-file-uploader';
 
 
 // componentes propios
@@ -27,6 +28,7 @@ import { UsersDetailComponent } from './users-base/users-detail/users-detail.com
 import { ParentComponentComponent } from './home/parent-component/parent-component.component';
 import { ChildComponentComponent } from './home/child-component/child-component.component';
 import { ImageGalleryComponent } from './image-gallery/image-gallery.component';
+import { UploadFilesComponent } from './upload-files/upload-files.component';
 
 @NgModule({
   declarations: [
@@ -41,15 +43,18 @@ import { ImageGalleryComponent } from './image-gallery/image-gallery.component';
     UsersDetailComponent,
     ParentComponentComponent,
     ChildComponentComponent,
-    ImageGalleryComponent
+    ImageGalleryComponent,
+    UploadFilesComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
+   // FileUploaderModule,
     NgbModule.forRoot(),
     usersRouting, //nested routing user´s CRUD
     routing, // main routing
+  Ng2UploaderModule,
     BrowserModule,
     ReactiveFormsModule /* xa que funcionen los formularios 
                           OJO!! si le pasamos solo FormsModule peta*/                        

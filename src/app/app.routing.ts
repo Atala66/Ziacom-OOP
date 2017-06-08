@@ -11,6 +11,7 @@ import { SideMenuComponent } from './side-menu/side-menu.component';
 import { ParentComponentComponent } from './home/parent-component/parent-component.component';
 import { ImageGalleryComponent } from './image-gallery/image-gallery.component';
 import {UsersDetailComponent } from '././users-base/users-detail/users-detail.component';
+import { UploadFilesComponent } from './upload-files/upload-files.component';
 
 
 // asignamos el objeto routes a una constante
@@ -19,6 +20,8 @@ const appRoutes: Routes = [
     { path: '', component: HomeComponent },
     { path: 'parent', component: ParentComponentComponent },
     { path: 'images', component: ImageGalleryComponent },
+    { path: 'upload', component: UploadFilesComponent },
+ 
     // get single user
     // {path:'users/:id', component:UsersBaseComponent},
     // post new user

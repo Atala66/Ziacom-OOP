@@ -4,32 +4,48 @@
   <h2 class="text-center image-gallery-title">{{title }}</h2>
   <!--1 Ventana modal asociada a la imagen seleccionada -->
 
- <!-- -->
-  <div class="modal fade" id="selectedImageModal">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-body"><!--@TODO : CERRAR ESTE MODAL-->
-          <div class="selectedImage" *ngIf="selectedImage">
-          <div class="close-modal">
-        <button type="button" class="btn btn-default btn-sm btn-close-modal" (click)="deselectImage(image)">X</button>
-          </div>
-            <img src="{{ selectedImage.url }}">
-            <div class="caption">
-              <p><strong>{{ selectedImage.title  }}</strong></p>
-              <p>{{ selectedImage.caption }}</p>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="modal fade" id="selectedImageModal">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-body">
+              <!--@TODO : CERRAR ESTE MODAL-->
+              <div class="selectedImage" *ngIf="selectedImage">
+                <div class="close-modal">
+                  <button type="button" class="btn btn-default btn-sm btn-close-modal" (click)="deselectImage(image)">X</button>
+                </div>
+                <img src="{{ selectedImage.url }}">
+                <div class="caption">
+                  <p><strong>{{ selectedImage.title  }}</strong></p>
+                  <p>{{ selectedImage.caption }}</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
+
+      <!--2  Lista thumbnail con todas las imágenes -->
+      <ul id="thumbnailList" class="images-list">
+        <li *ngFor="let image of images">
+  <img src="{{image.url}}" class="tn" width="191" height="146" data-toggle="modal" data-target="#selectedImageModal" (click)="setSelectedImage(image)">
+        </li>
+      </ul>
+    </div>
+
+  </div>
+  <hr>
+
+  <div class="row">
+    <div class="col-md-6">
+    <upload-files></upload-files>
+    </div>
+    <div class="">
+
     </div>
   </div>
 
-  <!--2  Lista thumbnail con todas las imágenes -->
-  <ul id="thumbnailList" class="images-list">
-    <li *ngFor="let image of images">
-      <img src="{{image.url}}" class="tn" width="191" height="146" data-toggle="modal" data-target="#selectedImageModal" (click)="setSelectedImage(image)">
-    </li>
-  </ul>
 
 
 </div>
