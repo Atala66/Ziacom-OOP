@@ -3,5 +3,9 @@
 <h1> Author:  {{author}}</h1>
 
                    <!--@Input-->         <!--@Output-->
- <child-component [titleToChild]="titleToChild" (dataToFather)='onNotify($event)'></child-component>
+ <child-component [giveMeObject]="objectToChild"
+  [titleChild] ="stringChild"
+   (dataToFather)='onNotify($event)'></child-component><!---->
+
+
 </div>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Input, Output,EventEmitter} from '@angular/core';
-
+//import { ObjectModel } from './child.model';
 @Component({
   selector: 'child-component',
   templateUrl: './child-component.component.html',
@@ -13,7 +13,9 @@ export class ChildComponentComponent implements OnInit {
     @Output() dataToFather:EventEmitter<string> = new EventEmitter<string>();
 
 // la propiedad title en el hijo es igual a lo que venga por el padre
-     @Input () titleToChild:string;
+     @Input () titleChild:string;
+    @Input ()giveMeObject:Object = {};
+
 
 
   // ARRAY DE DATOS A PELO: Normalmente vendran de un servidor y los consumiremos con un servicio

@@ -60,10 +60,19 @@ export class UsersBaseComponent implements OnInit {
     // necesitamos una funcion flecha para poder acceder al scope de vgar paramURL que
     //está en la clase
     this._activateRouter.params.forEach((params: Params) => {
+      if(params ['id'] != null){
       this.paramUrl = params['id'];
       console.log(params);
+      }
+
     });
 
+    this._activateRouter.params.forEach((params: Params) => {
+      if(params['id/detail'] !=null){
+      this.paramUrl = params['id/detail'];
+      console.log(params);
+      }
+    });
 
     this._userService.getAllUsers().subscribe(
       data => { this.getUsers = data },

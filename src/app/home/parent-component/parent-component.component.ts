@@ -13,7 +13,8 @@ import { ChildComponentComponent } from '.././child-component/child-component.co
 export class ParentComponentComponent implements OnInit {
   public titleComponent: string = 'I am the father component';
   public author: string = 'John Doe';
-  public titleToChild: string = 'Soy el texto pasado al componente hijo';
+  public stringChild: string = 'Hello World (paso de string)';
+  public objectToChild:Object = {'id':1, 'name':'My Object'};
 
 
   onNotify(message:string):void {

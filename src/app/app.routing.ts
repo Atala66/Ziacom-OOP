@@ -10,6 +10,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { SideMenuComponent } from './side-menu/side-menu.component';
 import { ParentComponentComponent } from './home/parent-component/parent-component.component';
 import { ImageGalleryComponent } from './image-gallery/image-gallery.component';
+import {UsersDetailComponent } from '././users-base/users-detail/users-detail.component';
 
 
 // asignamos el objeto routes a una constante
@@ -32,13 +33,8 @@ const appRoutes: Routes = [
                 component: UsersBaseComponent
             },
             {
-                path: '',
-                outlet: 'sidemenu', // ojo a esto es el name del router auxiliar!!!
-                component: SideMenuComponent
-            },
-            {
                 path: ':id/detail',
-                component: UsersBaseComponent
+                component: UsersDetailComponent
             }
         ]
     },
