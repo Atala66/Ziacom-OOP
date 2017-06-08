@@ -1,5 +1,4 @@
 <div class="container">
-
     <div class="child">
         <span class="float-left title-component">{{titleComponent}}</span>
         <br>
@@ -8,11 +7,23 @@
         <span class="float-right title-component">{{title}}</span>
         <hr>
         <h2>Books: </h2>
-        <h3>{{ titleToChild }}</h3>
+        <h3 class="text-center">{{ titleToChild }}</h3>
         <ul class="books" *ngFor="let book of books">
             <li>{{ book.title }}</li>
             <li>{{ book.price }}</li>
         </ul>
+
+        <h2 class="text-center">{{ otherTitleToChild }}</h2>
+
+
+   <!--propiedad pasada a traves del @input del padre-->
+  <!-- <ul class="object-to-child">
+       <li>{{ objectToChild.id }}</li>
+       <li>{{ objectToChild.title }}</li>
+       <li>{{ objectToChild.isObject }}</li>
+       <li>{{ objectToChild.numProps }}</li>
+   </ul>-->
+
 
 <br><hr>
         <span class="output-data" (click)="onClick()">Click me!!</span>

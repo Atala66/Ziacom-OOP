@@ -14,6 +14,14 @@ export class ParentComponentComponent implements OnInit {
   public titleComponent: string = 'I am the father component';
   public author: string = 'John Doe';
   public titleToChild: string = 'Soy el texto pasado al componente hijo';
+  public otherTitleToChild: string = 'Otro texto para el hijo';
+  // input para el hijo
+ /*public objectToChild = {
+    id: 1,
+    title: 'Soy el objeto pasado al cmp hijo',
+    isObject: true,
+    numProps:4
+  } */ 
 
 
   onNotify(message:string):void {
@@ -22,7 +30,6 @@ export class ParentComponentComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
 }

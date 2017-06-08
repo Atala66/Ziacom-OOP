@@ -4,4 +4,13 @@
 
                    <!--@Input-->         <!--@Output-->
  <child-component [title]="titleToChild" (dataToFather)='onNotify($event)'></child-component>
+  <child-component [stringFromFather]="titleComponent"></child-component>
+
+  
+ <!--<child-component [objectFromFather]="objectToChild"></child-component>
+
+ <componente-nesteado [propiedad input hijo]="valor de la propiedad padre"></componente-nesteado>
+ cada dato pasado se pinta sobre el component que lo va a recibir
+
+ -->
 </div>
