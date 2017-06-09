@@ -6,10 +6,10 @@
        [options]="options"
        (onUpload)="handleUpload($event)"
        (beforeUpload)="beforeUpload($event)"
-        (change)="readUrl($event)">
+       (onUploadRejected)="handleUploadRejected($event)"
+        (change)="readUrl($event)" multiple>
 
-<img [src]="url">
 
-
+<img [src]="url" width="191" height="146">
 
 </div>

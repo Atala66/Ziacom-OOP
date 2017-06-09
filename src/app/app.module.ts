@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {Component, NgZone} from '@angular/core';
+import {Component, NgZone} from '@angular/core'; //
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
@@ -12,8 +12,8 @@ import {routing , appRoutingProviders } from './app.routing';
 // importamos el módulo interno de enrutado de usuarios
 import {usersRouting } from './users-base/users.routing';
 // módulo para subida de imágenes
-import { Ng2UploaderModule } from 'ng2-uploader';
-//import { FileUploaderModule } from '@uniprank/ng2-file-uploader';
+import { Ng2UploaderModule, UploadRejected } from 'ng2-uploader';
+
 
 
 // componentes propios
@@ -50,7 +50,6 @@ import { UploadFilesComponent } from './upload-files/upload-files.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-   // FileUploaderModule,
     NgbModule.forRoot(),
     usersRouting, //nested routing user´s CRUD
     routing, // main routing

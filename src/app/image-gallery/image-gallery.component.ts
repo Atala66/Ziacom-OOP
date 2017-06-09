@@ -61,8 +61,7 @@ export class ImageGalleryComponent implements OnInit {
       error => console.log(error),
       () => console.log('Imágenes traidas del servicio')); 
     //this.images = this.datasource;
-
-       console.log(this.whatever);
+    //   console.log(this.whatever);
   }
   
 
