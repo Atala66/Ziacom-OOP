@@ -30,3 +30,13 @@ font-style: italic;
     color:#fff;
     cursor:pointer;
 }
+
+.object-child{
+    border:2px solid red;
+    padding:10px;
+}
+
+.span-title{
+    text-decoration: underline;
+    font-weight:900;
+}

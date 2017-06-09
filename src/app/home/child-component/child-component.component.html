@@ -12,10 +12,24 @@
             <li>{{ book.price }}</li>
         </ul>
 
-<br><hr>
+        <div class="object-child">
+            <span class="span-title">Paso de objeto</span>
+            <ul>
+                <!--LO QUE PINTAMOS ES LO QUE RECOGEMOS POR EL
+                ATRIBUTO @Input()!!-->
+                <li>ID: {{ giveMeObject.id }}</li>
+                <li>NAME: {{ giveMeObject.name }}</li>
+            </ul>
+        </div>
+
+        <br>
+        <hr>
         <span class="output-data" (click)="onClick()">Click me!!</span>
-          <!--propiedad pasada a traves del @input del padre-->
-        <span class="text-center title">{{titleToChild}}</span>
+        <!--propiedad pasada a traves del @input del padre-->
+        <!--pintamos la propiedad que nos viene en el atributo 
+          ¡¡¡¡ RECUERDA!!! SE IGUALA DE DHA A IZDA
+          -->
+        <span class="text-center title">{{titleChild}}</span>
     </div>
 
 </div>

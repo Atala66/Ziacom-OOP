@@ -1,5 +1,7 @@
 import { Component, OnInit, NgZone, ChangeDetectorRef } from '@angular/core';
 import { Ng2UploaderModule, UploadRejected } from 'ng2-uploader';
+//import { FileUploader } from '@uniprank/ng2-file-uploader';
+
 
 
 @Component({

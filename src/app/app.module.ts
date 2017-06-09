@@ -53,7 +53,7 @@ import { UploadFilesComponent } from './upload-files/upload-files.component';
     NgbModule.forRoot(),
     usersRouting, //nested routing user´s CRUD
     routing, // main routing
-    Ng2UploaderModule,
+  Ng2UploaderModule,
     BrowserModule,
     ReactiveFormsModule /* xa que funcionen los formularios 
                           OJO!! si le pasamos solo FormsModule peta*/                        

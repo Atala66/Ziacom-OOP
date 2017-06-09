@@ -29,7 +29,7 @@
                 <div class="div-table-col">{{user.username}}</div>
                 <div class="div-table-col">{{user.name}}</div>
                  <div class="div-table-col">{{user.email}}</div>
-                <div class="div-table-col"><a (click)="getSingleUser(user.id)" class="link-detail">Detail</a></div>
+                <div class="div-table-col"><a (click)="getSingleUser(user.id)" [routerLink]="['/users/user.id/detail']" class="link-detail">Detail</a></div>
                  <div class="div-table-col"><a (click)="updateUser(user)"[routerLink]="['/users', user.id]">Update</a></div>
                   <div class="div-table-col"><a (click)="deleteUser(user)" class="link-detail">Delete</a></div>
             </div>
