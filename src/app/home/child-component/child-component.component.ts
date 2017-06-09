@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges } from '@angular/core';
 import { Input, Output,EventEmitter} from '@angular/core';
 //import { ObjectModel } from './child.model';
 @Component({
@@ -14,8 +14,10 @@ export class ChildComponentComponent implements OnInit {
 
 // la propiedad title en el hijo es igual a lo que venga por el padre
      @Input () titleChild:string;
-    @Input ()giveMeObject:Object = {};
-
+    @Input ()giveMeObject:Object;
+    // vamos a devolverle un objeto al padre a traves de la emision de un evento
+    @Output() returnChangedObject:EventEmitter<Object> = new EventEmitter<Object>();
+    
 
 
   // ARRAY DE DATOS A PELO: Normalmente vendran de un servidor y los consumiremos con un servicio
@@ -37,13 +39,18 @@ export class ChildComponentComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {  }
+
+    ngOnChanges(){  }
+
 
     onClick(){
       this.dataToFather.emit(' ....y yo soy los datos pasados de vuelta al padre ')
     }
 
-
+    changeObject(){
+      // instanciamos la propiedad recogida con el output y la devolvemos
+      this.returnChangedObject.emit(this.giveMeObject);
+    }
 
 }

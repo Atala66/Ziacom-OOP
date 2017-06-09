@@ -14,8 +14,6 @@ import {usersRouting } from './users-base/users.routing';
 // módulo para subida de imágenes
 import { Ng2UploaderModule, UploadRejected } from 'ng2-uploader';
 
-
-
 // componentes propios
 import { UsersBaseComponent } from './users-base/users-base.component';
 import { HomeComponent } from './home/home.component';
@@ -29,6 +27,7 @@ import { ParentComponentComponent } from './home/parent-component/parent-compone
 import { ChildComponentComponent } from './home/child-component/child-component.component';
 import { ImageGalleryComponent } from './image-gallery/image-gallery.component';
 import { UploadFilesComponent } from './upload-files/upload-files.component';
+import { SystemMessageComponent } from './home/system-message/system-message.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +43,8 @@ import { UploadFilesComponent } from './upload-files/upload-files.component';
     ParentComponentComponent,
     ChildComponentComponent,
     ImageGalleryComponent,
-    UploadFilesComponent
+    UploadFilesComponent,
+    SystemMessageComponent
   ],
   imports: [
     BrowserModule,

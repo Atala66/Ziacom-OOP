@@ -5,7 +5,13 @@
                    <!--@Input-->         <!--@Output-->
  <child-component [giveMeObject]="objectToChild"
   [titleChild] ="stringChild"
-   (dataToFather)='onNotify($event)'></child-component><!---->
-
-
+  (dataToFather)='onNotify($event)'
+  (returnChangedObject)='giveMeData($event)'></child-component><!---->
+  <hr>
+  <div class="text-center">
+     <h2>@ChildView Demo</h2>
+  <system-message></system-message>
+  <button type="button" class="btn btn-warning" (click)="toogleMessage">Toogle Message</button>
+  </div>
+ 
 </div>

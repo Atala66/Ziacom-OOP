@@ -1,0 +1,8 @@
+.active-message{
+    border:1px dotted red;
+    padding:10px;
+}
+.message{
+    color:orangered;
+    font-weight:800;
+}
